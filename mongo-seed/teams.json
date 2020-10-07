@@ -1,0 +1,464 @@
+[
+  {
+    "ID": 2610,
+    "Name": "Olympiacos",
+    "Country": "Greece",
+    "Eliminated": true
+  },
+  {
+    "ID": 7889,
+    "Name": "Liverpool",
+    "Country": "England",
+    "Eliminated": true
+  },
+  {
+    "ID": 50004,
+    "Name": "Grasshoppers",
+    "Country": "Switzerland",
+    "Eliminated": true
+  },
+  {
+    "ID": 50023,
+    "Name": "Monaco",
+    "Country": "France",
+    "Eliminated": false
+  },
+  {
+    "ID": 50030,
+    "Name": "Salzburg",
+    "Country": "Austria",
+    "Eliminated": true
+  },
+  {
+    "ID": 50033,
+    "Name": "Sparta Praha",
+    "Country": "Czech Republic",
+    "Eliminated": true
+  },
+  {
+    "ID": 50037,
+    "Name": "Bayern",
+    "Country": "Germany",
+    "Eliminated": false
+  },
+  {
+    "ID": 50050,
+    "Name": "Celtic",
+    "Country": "Scotland",
+    "Eliminated": true
+  },
+  {
+    "ID": 50051,
+    "Name": "Real Madrid",
+    "Country": "Spain",
+    "Eliminated": false
+  },
+  {
+    "ID": 50052,
+    "Name": "HJK",
+    "Country": "Finland",
+    "Eliminated": true
+  },
+  {
+    "ID": 50064,
+    "Name": "Porto",
+    "Country": "Portugal",
+    "Eliminated": false
+  },
+  {
+    "ID": 50065,
+    "Name": "Steaua",
+    "Country": "Romania",
+    "Eliminated": true
+  },
+  {
+    "ID": 50067,
+    "Name": "Galatasaray",
+    "Country": "Turkey",
+    "Eliminated": true
+  },
+  {
+    "ID": 50074,
+    "Name": "Anderlecht",
+    "Country": "Belgium",
+    "Eliminated": true
+  },
+  {
+    "ID": 50080,
+    "Name": "Barcelona",
+    "Country": "Spain",
+    "Eliminated": false
+  },
+  {
+    "ID": 50084,
+    "Name": "Panathinaikos",
+    "Country": "Greece",
+    "Eliminated": true
+  },
+  {
+    "ID": 50109,
+    "Name": "Leverkusen",
+    "Country": "Germany",
+    "Eliminated": false
+  },
+  {
+    "ID": 50118,
+    "Name": "APOEL",
+    "Country": "Cyprus",
+    "Eliminated": true
+  },
+  {
+    "ID": 50124,
+    "Name": "Atlético",
+    "Country": "Spain",
+    "Eliminated": false
+  },
+  {
+    "ID": 50125,
+    "Name": "Athletic",
+    "Country": "Spain",
+    "Eliminated": true
+  },
+  {
+    "ID": 50133,
+    "Name": "St Patrick's",
+    "Country": "Republic of Ireland",
+    "Eliminated": true
+  },
+  {
+    "ID": 50136,
+    "Name": "Napoli",
+    "Country": "Italy",
+    "Eliminated": true
+  },
+  {
+    "ID": 50137,
+    "Name": "Roma",
+    "Country": "Italy",
+    "Eliminated": true
+  },
+  {
+    "ID": 50139,
+    "Name": "Juventus",
+    "Country": "Italy",
+    "Eliminated": false
+  },
+  {
+    "ID": 50143,
+    "Name": "Ajax",
+    "Country": "Netherlands",
+    "Eliminated": true
+  },
+  {
+    "ID": 50146,
+    "Name": "Legia",
+    "Country": "Poland",
+    "Eliminated": true
+  },
+  {
+    "ID": 50147,
+    "Name": "Benfica",
+    "Country": "Portugal",
+    "Eliminated": true
+  },
+  {
+    "ID": 50149,
+    "Name": "Sporting",
+    "Country": "Portugal",
+    "Eliminated": true
+  },
+  {
+    "ID": 50152,
+    "Name": "Malmö",
+    "Country": "Sweden",
+    "Eliminated": true
+  },
+  {
+    "ID": 50157,
+    "Name": "Be?ikta?",
+    "Country": "Turkey",
+    "Eliminated": true
+  },
+  {
+    "ID": 50158,
+    "Name": "Dnipro",
+    "Country": "Ukraine",
+    "Eliminated": true
+  },
+  {
+    "ID": 50162,
+    "Name": "Partizan",
+    "Country": "Serbia",
+    "Eliminated": true
+  },
+  {
+    "ID": 50164,
+    "Name": "Dinamo Zagreb",
+    "Country": "Croatia",
+    "Eliminated": true
+  },
+  {
+    "ID": 52165,
+    "Name": "Standard Liège",
+    "Country": "Belgium",
+    "Eliminated": true
+  },
+  {
+    "ID": 52280,
+    "Name": "Arsenal",
+    "Country": "England",
+    "Eliminated": false
+  },
+  {
+    "ID": 52307,
+    "Name": "KR",
+    "Country": "Iceland",
+    "Eliminated": true
+  },
+  {
+    "ID": 52641,
+    "Name": "Valletta",
+    "Country": "Malta",
+    "Eliminated": true
+  },
+  {
+    "ID": 52705,
+    "Name": "Dinamo Tbilisi",
+    "Country": "Georgia",
+    "Eliminated": true
+  },
+  {
+    "ID": 52707,
+    "Name": "Shakhtar Donetsk",
+    "Country": "Ukraine",
+    "Eliminated": false
+  },
+  {
+    "ID": 52709,
+    "Name": "København",
+    "Country": "Denmark",
+    "Eliminated": true
+  },
+  {
+    "ID": 52747,
+    "Name": "Paris",
+    "Country": "France",
+    "Eliminated": false
+  },
+  {
+    "ID": 52749,
+    "Name": "Feyenoord",
+    "Country": "Netherlands",
+    "Eliminated": true
+  },
+  {
+    "ID": 52758,
+    "Name": "Dortmund",
+    "Country": "Germany",
+    "Eliminated": false
+  },
+  {
+    "ID": 52797,
+    "Name": "Slovan Bratislava",
+    "Country": "Slovakia",
+    "Eliminated": true
+  },
+  {
+    "ID": 52800,
+    "Name": "AEL",
+    "Country": "Cyprus",
+    "Eliminated": true
+  },
+  {
+    "ID": 52826,
+    "Name": "Zenit",
+    "Country": "Russia",
+    "Eliminated": true
+  },
+  {
+    "ID": 52914,
+    "Name": "Chelsea",
+    "Country": "England",
+    "Eliminated": false
+  },
+  {
+    "ID": 52919,
+    "Name": "Man. City",
+    "Country": "England",
+    "Eliminated": false
+  },
+  {
+    "ID": 52958,
+    "Name": "Debrecen",
+    "Country": "Hungary",
+    "Eliminated": true
+  },
+  {
+    "ID": 52991,
+    "Name": "Cliftonville",
+    "Country": "Northern Ireland",
+    "Eliminated": true
+  },
+  {
+    "ID": 54186,
+    "Name": "AaB",
+    "Country": "Denmark",
+    "Eliminated": true
+  },
+  {
+    "ID": 54266,
+    "Name": "CSKA Moskva",
+    "Country": "Russia",
+    "Eliminated": true
+  },
+  {
+    "ID": 57388,
+    "Name": "Schalke",
+    "Country": "Germany",
+    "Eliminated": false
+  },
+  {
+    "ID": 57477,
+    "Name": "M. Tel-Aviv",
+    "Country": "Israel",
+    "Eliminated": true
+  },
+  {
+    "ID": 57485,
+    "Name": "Strømsgodset",
+    "Country": "Norway",
+    "Eliminated": true
+  },
+  {
+    "ID": 57490,
+    "Name": "Maribor",
+    "Country": "Slovenia",
+    "Eliminated": true
+  },
+  {
+    "ID": 59025,
+    "Name": "HB",
+    "Country": "Faroe Islands",
+    "Eliminated": true
+  },
+  {
+    "ID": 59028,
+    "Name": "Dudelange",
+    "Country": "Luxembourg",
+    "Eliminated": true
+  },
+  {
+    "ID": 59856,
+    "Name": "Basel",
+    "Country": "Switzerland",
+    "Eliminated": false
+  },
+  {
+    "ID": 60457,
+    "Name": "TNS",
+    "Country": "Wales",
+    "Eliminated": true
+  },
+  {
+    "ID": 60609,
+    "Name": "Qaraba?",
+    "Country": "Azerbaijan",
+    "Eliminated": true
+  },
+  {
+    "ID": 62180,
+    "Name": "FC Santa Coloma",
+    "Country": "Andorra",
+    "Eliminated": true
+  },
+  {
+    "ID": 64114,
+    "Name": "Skënderbeu",
+    "Country": "Albania",
+    "Eliminated": true
+  },
+  {
+    "ID": 64359,
+    "Name": "Ventspils",
+    "Country": "Latvia",
+    "Eliminated": true
+  },
+  {
+    "ID": 64508,
+    "Name": "La Fiorita",
+    "Country": "San Marino",
+    "Eliminated": true
+  },
+  {
+    "ID": 66168,
+    "Name": "BATE",
+    "Country": "Belarus",
+    "Eliminated": true
+  },
+  {
+    "ID": 69601,
+    "Name": "Rabotnicki",
+    "Country": "FYR Macedonia",
+    "Eliminated": true
+  },
+  {
+    "ID": 69606,
+    "Name": "Sheriff",
+    "Country": "Moldova",
+    "Eliminated": true
+  },
+  {
+    "ID": 73390,
+    "Name": "Zrinjski",
+    "Country": "Bosnia and Herzegovina",
+    "Eliminated": true
+  },
+  {
+    "ID": 73936,
+    "Name": "Sutjeska",
+    "Country": "Montenegro",
+    "Eliminated": true
+  },
+  {
+    "ID": 75797,
+    "Name": "LOSC",
+    "Country": "France",
+    "Eliminated": true
+  },
+  {
+    "ID": 77482,
+    "Name": "Levadia",
+    "Country": "Estonia",
+    "Eliminated": true
+  },
+  {
+    "ID": 77866,
+    "Name": "Banants",
+    "Country": "Armenia",
+    "Eliminated": true
+  },
+  {
+    "ID": 79973,
+    "Name": "Aktobe",
+    "Country": "Kazakhstan",
+    "Eliminated": true
+  },
+  {
+    "ID": 2602334,
+    "Name": "Žalgiris",
+    "Country": "Lithuania",
+    "Eliminated": true
+  },
+  {
+    "ID": 2603104,
+    "Name": "Ludogorets",
+    "Country": "Bulgaria",
+    "Eliminated": true
+  },
+  {
+    "ID": 2605572,
+    "Name": "Lincoln",
+    "Country": "Gibraltar",
+    "Eliminated": true
+  }
+]
