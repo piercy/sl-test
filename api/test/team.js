@@ -24,7 +24,7 @@ describe('Team', () => {
     });
 
     // test when no teams are in the database
-    describe('/GET Team', () => {
+    describe('/GET No Teams', () => {
         it('it should GET no teams', (done) => {
             chai.request(app)
                 .get('/team')
@@ -37,7 +37,7 @@ describe('Team', () => {
         });
     });
     // test returning all teams
-    describe('/GET Team', () => {
+    describe('/GET Teams', () => {
         it('it should GET 1 team', (done) => {
             let dummyTeam = new Team({
                 ID: 1,
@@ -80,6 +80,27 @@ describe('Team', () => {
 
     });
 
+    describe('/POST Team Duplicate Id', () => {
+        it('it should return an error due a team with that ID already existing', (done) => {
+            let dummyTeam = new Team({
+                ID: 1,
+                Name: "St Martins",
+                Country: "England",
+                Eliminated: false
+            });
+            dummyTeam.save((err, team) => {
+                chai.request(app)
+                    .post('/team')
+                    .send(dummyTeam)
+                    .end((err, res) => {
+                        res.should.have.status(400);
+                        done();
+                    });
+            });
+        });
+
+    });
+
     // test getting an individual team
     describe('/GET/:id team', () => {
         it('it should GET a team by Id', (done) => {
@@ -92,7 +113,6 @@ describe('Team', () => {
             dummyTeam.save((err, team) => {
                 chai.request(app)
                     .get('/team/' + dummyTeam.ID)
-                    .send(dummyTeam)
                     .end((err, res) => {
                         res.should.have.status(200);
                         res.body.should.be.a('object');
@@ -101,6 +121,21 @@ describe('Team', () => {
                         done();
                     });
             });
+
+        });
+    });
+
+
+    describe('/GET/:id team does not exist', () => {
+        it('it should GET an error as a team with that id does not exist', (done) => {
+
+                chai.request(app)
+                    .get('/team/1')
+                    .end((err, res) => {
+                        res.should.have.status(400);
+                        done();
+                    });
+
 
         });
     });

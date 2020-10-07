@@ -1,8 +1,13 @@
 const teamService = require("../services/teamService");
 
 async function getTeam(req, res) {
-    const team = await teamService.get(req.params.teamId);
-    res.json(team);
+    try {
+        const team = await teamService.get(req.params.teamId);
+        res.json(team);
+    } catch (e) {
+        // Returning the exception object just for demonstration purposes.  Shouldn't do this for production.
+        res.status(400).send(e);
+    }
 }
 
 async function deleteTeam(req, res) {
@@ -11,14 +16,22 @@ async function deleteTeam(req, res) {
 }
 
 async function postTeam(req, res) {
-    const team = req.body;
-    const newTeam = await teamService.add(team);
-    res.json(newTeam);
+    try {
+        const team = req.body;
+        const newTeam = await teamService.add(team);
+        res.json(newTeam);
+    } catch (e) {
+        res.status(400).send(e);
+    }
 }
 async function updateTeam(req, res) {
-    const team = req.body;
-    const newTeam = await teamService.update(req.params.teamId, team);
-    res.json(newTeam);
+    try {
+        const team = req.body;
+        const newTeam = await teamService.update(req.params.teamId, team);
+        res.json(newTeam);
+    } catch(e) {
+        res.status(400).send(e);
+    }
 }
 
 async function getTeams(req, res) {

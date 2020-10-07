@@ -9,7 +9,11 @@ const db = mongoose.connection;
 db.on("error", (error) => console.log(error));
 
 const get = async function (teamId) {
-    return Team.findOne({ID: teamId});
+    const team = await Team.findOne({ID: teamId});
+    if (team == null)
+        throw "A team with that ID does not exist";
+    else
+        return team;
 };
 
 const getAll = async function () {
@@ -22,7 +26,7 @@ const add = async function (team) {
         const newTeam = new Team (team);
         return await newTeam.save();
     } else {
-        //TODO: Handle Error
+        throw "A team with that ID already exists";
     }
 };
 const update = async function (teamId, team) {
@@ -30,7 +34,7 @@ const update = async function (teamId, team) {
     if (dbTeam != null) {
         return await Object.assign(dbTeam, team).save();
     } else {
-        //TODO: Handle Error
+        throw "A team with that ID does not exist"
     }
 };
 const remove = async function (teamId) {
