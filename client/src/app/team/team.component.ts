@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {Team} from "../models/team";
 import {TeamsService} from "../teams.service";
@@ -10,7 +10,12 @@ import {TeamsService} from "../teams.service";
 })
 export class TeamComponent implements OnInit {
 
-  @Input() team: Team = null;
+  uefaImageUrl: string;
+  uefaProfileUrl: string = '';
+
+  // Could allow input and then wouldn't need to make a back-end call if we already have the data (could be useful for on hover or similar)
+  //@Input() team: Team = null;
+  team: Team = null;
   errorMessage: string;
   error: boolean;
 
@@ -20,6 +25,10 @@ export class TeamComponent implements OnInit {
       {
         teamService.get(params.teamId).subscribe((res: Team) => {
           this.team = res;
+
+          this.uefaImageUrl = `http://img.uefa.com/imgml/TP/teams/logos/70x70/${this.team.ID}.png`;
+          this.uefaProfileUrl = `https://www.uefa.com/teamsandplayers/teams/club=${this.team.ID}/profile/index.html`;
+
         }, error => {
           this.error = true;
           this.errorMessage = error.error;

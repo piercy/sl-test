@@ -10,13 +10,14 @@
 <div *ngIf="team != null">
   <div class="row" >
     <div class="col-lg-12">
-      <img class="d-inline-block float-right" [src]="'http://img.uefa.com/imgml/TP/teams/logos/70x70/' + team.ID + '.png'" alt="Team badge">
+      <img class="d-inline-block float-right" [src]="uefaImageUrl" alt="Team badge">
       <h1 class="d-inline-block align-middle" >{{team.Name}}</h1>
     </div>
   </div>
   <div class="mb-2 row">
     <div class="col-lg-8">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu lacus tempus, imperdiet arcu in, convallis justo. In nec urna varius, sodales est ut, fringilla lorem.</p>
+      <a class="" target="_blank" [href]="uefaProfileUrl">UEFA Profile</a>
     </div>
     <div class="col-lg-4">
     <ul>
