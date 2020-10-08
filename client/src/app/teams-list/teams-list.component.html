@@ -1,0 +1,22 @@
+<div class="col-lg-12">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Country</th>
+      <th scope="col">Eliminated</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let team of teams">
+      <td>{{team.ID}}</td>
+      <td>{{team.Name}}</td>
+      <td>{{team.Country}}</td>
+      <td>{{team.Eliminated}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<app-team></app-team>

@@ -1,9 +1,10 @@
 const express = require("express");
+const cors = require("cors");
 const team = require("./routes/team")
 const PORT = process.env.PORT;
 const app = express();
 app.use(express.json());
-
+app.use(cors());
 app.route("/team")
     .get(team.getTeams)
     .post(team.postTeam);
