@@ -18,4 +18,8 @@ export class TeamsService {
   get(teamId: any): Observable<Team> {
     return this.http.get<Team>(`${environment.apiBaseUrl}/team/${teamId}`);
   }
+
+  update(team: Team) {
+    return this.http.put<Team>(`${environment.apiBaseUrl}/team/${team.ID}`, team);
+  }
 }

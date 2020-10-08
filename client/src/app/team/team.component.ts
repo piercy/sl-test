@@ -18,6 +18,8 @@ export class TeamComponent implements OnInit {
   team: Team = null;
   errorMessage: string;
   error: boolean;
+  editMode: boolean;
+  private originalTeam: Team;
 
   constructor(private activatedRoute: ActivatedRoute, private teamService : TeamsService) {
     this.activatedRoute.params.subscribe((params) => {
@@ -40,4 +42,25 @@ export class TeamComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  enableEditing() {
+    this.editMode = true;
+    this.originalTeam = Object.assign({}, this.team);
+  }
+  disableEditing(cancel: boolean) {
+     if(cancel) {
+       this.team = Object.assign({}, this.originalTeam);
+     }
+     this.originalTeam = null;
+     this.editMode = false;
+  }
+
+  saveTeam() {
+    this.teamService.update(this.team).subscribe((res: Team) => {
+        this.team = res;
+        this.editMode = false;
+    }, error => {
+      this.error = true;
+      this.errorMessage = error.error;
+    });
+  }
 }

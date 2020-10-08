@@ -8,23 +8,61 @@
   </div>
 </div>
 <div *ngIf="team != null">
-  <div class="row" >
+  <div class="row">
     <div class="col-lg-12">
       <img class="d-inline-block float-right" [src]="uefaImageUrl" alt="Team badge">
-      <h1 class="d-inline-block align-middle" >{{team.Name}}</h1>
+      <h1 class="d-inline-block align-middle">{{team.Name}}</h1>
+
     </div>
   </div>
   <div class="mb-2 row">
     <div class="col-lg-8">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu lacus tempus, imperdiet arcu in, convallis justo. In nec urna varius, sodales est ut, fringilla lorem.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu lacus tempus, imperdiet arcu in, convallis
+        justo. In nec urna varius, sodales est ut, fringilla lorem.</p>
       <a class="" target="_blank" [href]="uefaProfileUrl">UEFA Profile</a>
     </div>
     <div class="col-lg-4">
-    <ul>
-      <li><strong>Id: </strong><span class="float-right">{{team.ID}}</span></li>
-      <li><strong>Country: </strong><span class="float-right">{{team.Country}}</span></li>
-      <li><strong>Eliminated: </strong><span class="float-right">{{team.Eliminated}}</span></li>
-    </ul>
+      <div class="row">
+        <div class="col-lg-12">
+          <ul>
+            <li>
+              <label class="col-lg-12 m-0 p-0">
+                <strong>Id:</strong>
+                <input type="number" class="form-control"  placeholder="Enter a team Id" *ngIf="editMode" [(ngModel)]="team.ID">
+                <span class="float-right" *ngIf="!editMode">{{team.ID}}</span>
+              </label>
+            </li>
+            <li *ngIf="editMode">
+              <label class="col-lg-12 m-0 p-0">
+                <strong>Name:</strong>
+                <input type="text" class="form-control"  placeholder="Enter a team name" *ngIf="editMode" [(ngModel)]="team.Name">
+              </label>
+            </li>
+            <li>
+              <label class="col-lg-12 m-0 p-0">
+                <strong>Country:</strong>
+                <input type="text" class="form-control"  placeholder="Enter a Country" *ngIf="editMode" [(ngModel)]="team.Country">
+                <span class="float-right" *ngIf="!editMode">{{team.Country}}</span>
+              </label>
+            </li>
+            <li>
+              <label class="col-lg-12 m-0 p-0">
+                <strong>Eliminated:</strong>
+                <input type="text" class="form-control"  placeholder="" *ngIf="editMode" [(ngModel)]="team.Eliminated">
+                <span class="float-right" *ngIf="!editMode">{{team.Eliminated}}</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <button type="button" class="btn btn-primary float-right" (click)="enableEditing()" *ngIf="!editMode">Edit
+          </button>
+          <button type="button" class="btn btn-primary float-right" (click)="saveTeam()" *ngIf="editMode">Save</button>
+          <button type="button" class="btn btn-danger float-right" (click)="disableEditing(true)" *ngIf="editMode">Cancel</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
