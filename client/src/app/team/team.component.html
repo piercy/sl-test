@@ -1,3 +1,4 @@
+
 <div *ngIf="error">
   <div class="row">
     <div class="col-lg-12">
@@ -41,7 +42,13 @@
             <li>
               <label class="col-lg-12 m-0 p-0">
                 <strong>Country:</strong>
-                <input type="text" class="form-control"  placeholder="Enter a Country" *ngIf="editMode" [(ngModel)]="team.Country">
+
+                <select class="form-control" [(ngModel)]="team.Country" *ngIf="editMode">
+                  <option *ngFor="let country of countries" [ngValue]="country.Name">
+                    {{country.Name}}
+                  </option>
+                </select>
+
                 <span class="float-right" *ngIf="!editMode">{{team.Country}}</span>
               </label>
             </li>

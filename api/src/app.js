@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const team = require("./routes/team")
+const country = require("./routes/country")
 const PORT = process.env.PORT;
 const app = express();
 app.use(express.json());
@@ -12,6 +13,9 @@ app.route("/team/:teamId")
     .get(team.getTeam)
     .delete(team.deleteTeam)
     .put(team.updateTeam);
+
+app.route("/country")
+    .get(country.getCountries)
 
 
 app.listen(PORT, () => {

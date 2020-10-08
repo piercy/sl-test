@@ -1,7 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Team} from "../models/team";
 import {TeamsService} from "../teams.service";
+import {CountryService} from "../country.service";
+import {Country} from "../models/country";
 
 @Component({
   selector: 'app-team',
@@ -16,15 +18,15 @@ export class TeamComponent implements OnInit {
   // Could allow input and then wouldn't need to make a back-end call if we already have the data (could be useful for on hover or similar)
   //@Input() team: Team = null;
   team: Team = null;
+  countries: Country[] = [];
   errorMessage: string;
   error: boolean;
   editMode: boolean;
   private originalTeam: Team;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, private teamService : TeamsService) {
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private teamService : TeamsService, private countryService: CountryService) {
     this.activatedRoute.params.subscribe((params) => {
-      if(this.team == null)
-      {
+      if(this.team == null) {
         teamService.get(params.teamId).subscribe((res: Team) => {
           this.team = res;
 
@@ -36,6 +38,16 @@ export class TeamComponent implements OnInit {
           this.errorMessage = error.error;
         });
       }
+      if(this.countries.length === 0) {
+
+        countryService.getAll().subscribe((res: Country[]) => {
+          this.countries = res;
+        }, error => {
+          this.error = true;
+          this.errorMessage = error.error;
+        });
+      }
+
     });
   }
 
@@ -58,12 +70,15 @@ export class TeamComponent implements OnInit {
     this.teamService.update(this.team).subscribe((res: Team) => {
         this.team = res;
         this.editMode = false;
+        // this confirmation would probably be better as some kind of toast notification
+        this.router.navigate(['/teams', {Updated: true, Name: this.team.Name}]);
     }, error => {
       this.error = true;
       this.errorMessage = error.error;
     });
+  }
 
-    this.router.navigate(['/teams', {Updated: true, Name: this.team.Name}]);
-
+  trackByFn(index) {
+    return index;
   }
 }
