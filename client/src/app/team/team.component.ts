@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Team} from "../models/team";
 import {TeamsService} from "../teams.service";
 
@@ -21,7 +21,7 @@ export class TeamComponent implements OnInit {
   editMode: boolean;
   private originalTeam: Team;
 
-  constructor(private activatedRoute: ActivatedRoute, private teamService : TeamsService) {
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private teamService : TeamsService) {
     this.activatedRoute.params.subscribe((params) => {
       if(this.team == null)
       {
@@ -62,5 +62,8 @@ export class TeamComponent implements OnInit {
       this.error = true;
       this.errorMessage = error.error;
     });
+
+    this.router.navigate(['/teams', {Updated: true, Name: this.team.Name}]);
+
   }
 }

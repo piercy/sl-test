@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 import {Team} from "../models/team";
 import {TeamsService} from "../teams.service";
 
@@ -10,10 +11,15 @@ import {TeamsService} from "../teams.service";
 export class TeamsComponent implements OnInit {
 
   teams: Team[] = [];
+  updateSuccess: boolean;
+  updateTeamName: string;
 
-  constructor(private teamService: TeamsService) { }
+
+  constructor(private teamService: TeamsService, private route : ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.updateSuccess = this.route.snapshot.paramMap.get("Updated") == 'true';
+    this.updateTeamName = this.route.snapshot.paramMap.get("Name");
     this.getTeams();
   }
   getTeams() {
