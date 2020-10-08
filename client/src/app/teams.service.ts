@@ -12,6 +12,10 @@ export class TeamsService {
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<Team[]> {
-    return this.http.get<Team[]>(environment.apiBaseUrl + "/team");
+    return this.http.get<Team[]>(`${environment.apiBaseUrl}/team`);
+  }
+
+  get(teamId: any): Observable<Team> {
+    return this.http.get<Team>(`${environment.apiBaseUrl}/team/${teamId}`);
   }
 }

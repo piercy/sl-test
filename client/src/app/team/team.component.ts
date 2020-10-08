@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {Team} from "../models/team";
+import {TeamsService} from "../teams.service";
 
 @Component({
   selector: 'app-team',
@@ -7,7 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamComponent implements OnInit {
 
-  constructor() { }
+  @Input() team: Team = null;
+  constructor(private activatedRoute: ActivatedRoute, private teamService : TeamsService) {
+    this.activatedRoute.params.subscribe((params) => {
+      if(this.team == null)
+      {
+        teamService.get(params.teamId).subscribe((res: Team) => {
+          this.team = res;
+        });
+      }
+    });
+  }
 
   ngOnInit(): void {
   }
