@@ -1,18 +1,29 @@
-<div class="my-2 row">
-  <div class="col-lg-12">
-    <img class="d-inline-block float-right" [src]="'http://img.uefa.com/imgml/TP/teams/logos/70x70/' + team.ID + '.png'" alt="Team badge">
-    <h1 class="d-inline-block align-middle" >{{team.Name}}</h1>
+<div *ngIf="error">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="alert alert-warning" role="alert">
+        {{errorMessage}}
+      </div>
+    </div>
   </div>
 </div>
-<div class="mb-2 row">
-  <div class="col-lg-8">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu lacus tempus, imperdiet arcu in, convallis justo. In nec urna varius, sodales est ut, fringilla lorem.</p>
+<div *ngIf="team != null">
+  <div class="row" >
+    <div class="col-lg-12">
+      <img class="d-inline-block float-right" [src]="'http://img.uefa.com/imgml/TP/teams/logos/70x70/' + team.ID + '.png'" alt="Team badge">
+      <h1 class="d-inline-block align-middle" >{{team.Name}}</h1>
+    </div>
   </div>
-  <div class="col-lg-4">
-  <ul>
-    <li><strong>Id: </strong><span class="float-right">{{team.ID}}</span></li>
-    <li><strong>Country: </strong><span class="float-right">{{team.Country}}</span></li>
-    <li><strong>Eliminated: </strong><span class="float-right">{{team.Eliminated}}</span></li>
-  </ul>
+  <div class="mb-2 row">
+    <div class="col-lg-8">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu lacus tempus, imperdiet arcu in, convallis justo. In nec urna varius, sodales est ut, fringilla lorem.</p>
+    </div>
+    <div class="col-lg-4">
+    <ul>
+      <li><strong>Id: </strong><span class="float-right">{{team.ID}}</span></li>
+      <li><strong>Country: </strong><span class="float-right">{{team.Country}}</span></li>
+      <li><strong>Eliminated: </strong><span class="float-right">{{team.Eliminated}}</span></li>
+    </ul>
+    </div>
   </div>
 </div>

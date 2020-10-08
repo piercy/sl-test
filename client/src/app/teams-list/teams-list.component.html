@@ -9,7 +9,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let team of teams">
+    <tr *ngFor="let team of teams" [routerLink]="'/team/' + team.ID" class="TeamRow">
       <td>{{team.ID}}</td>
       <td>{{team.Name}}</td>
       <td>{{team.Country}}</td>

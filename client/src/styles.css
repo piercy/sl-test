@@ -3,3 +3,6 @@ ul, li {
   margin: 5px;
   padding: 0;
 }
+.TeamRow {
+  cursor: pointer;
+}
